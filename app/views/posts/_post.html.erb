@@ -1,17 +1,15 @@
-<div id="<%= dom_id post %>">
-  <div>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </div>
+<div class="card bg-light">
+  <div class="card-body">
 
-  <div>
-    <strong>Author:</strong>
-    <%= post.author %>
-  </div>
+    <h4><%= link_to post.title, post , class: "text-decoration-none" %></h4>
 
-  <div>
-    <strong>Body:</strong>
-    <%= post.body %>
+    <div class="text-muted mb-2">
+       <em>Por: <%= post.author %> (<%= post.created_at.strftime("%d/%m/%Y") %>)</em>
+    </div>
+
+    <p> <%= post.body.truncate(200) %></p>
+
+    <p class='text-muted'> <%= pluralize(post.comments.count, "comentário") %></p>
   </div>
-  <div>
 </div>
+
