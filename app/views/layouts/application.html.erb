@@ -25,6 +25,18 @@
   </head>
 
   <body>
+    <div class="bg-primary text-center text-white mb-4 p-4 ">
+      <%= link_to root_path, class: 'text-white text-decoration-none' do %>
+        <h1 class="display-4 "> Blog On Rails </h1>
+        
+      <%end%>
+      <p class="lead">
+        Rails
+      </p>
+    </div>
     <%= yield %>
+    <footer class="bg-primary text-white text-center mt-5 p-3">
+      Copyright © <%= Date.current.year %> Blog On Rails
+    </footer>
   </body>
 </html>
