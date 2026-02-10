@@ -1,4 +1,4 @@
-<div class="card bg-light">
+<div class="card bg-light mb-2">
   <div class="card-body">
 
     <h4><%= link_to post.title, post , class: "text-decoration-none" %></h4>
@@ -10,6 +10,11 @@
     <p> <%= post.body.truncate(200) %></p>
 
     <p class='text-muted'> <%= pluralize(post.comments.count, "comentário") %></p>
+  
+    <%= link_to "Ler Artigo", post, class: "btn btn-primary" %>
+    <%= link_to "Editar", edit_post_path(post), class: "btn btn-secondary" %>
+    <%= link_to "Apagar", post, method: :delete, class: "btn btn-danger", 
+    data: { confirm: "Tem certeza?" } %>
   </div>
 </div>
 
